@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>golden-data-systems</Name>
+  <Repository>ghcr.io/arcreactorkc/golden-data-systems:latest</Repository>
+  <Registry>https://ghcr.io/arcreactorkc/golden-data-systems</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/arcreactorkc/goldendatasystemsweb/issues</Support>
+  <Project>https://github.com/arcreactorkc/goldendatasystemsweb</Project>
+  <Overview>Golden Data Systems is a managed technology and intelligent infrastructure partner for growing businesses -- combining traditional IT support, industrial and OT experience, and practical AI automation into a single, accountable partnership. This app serves the Golden Data Systems marketing website, including the "Ask Our AI" assistant page, which proxies to an n8n webhook you configure below.</Overview>
+  <Category>Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/arcreactorkc/goldendatasystemsweb/main/public/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="Port the Next.js server listens on inside the container" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Chat Webhook URL" Target="CHAT_WEBHOOK_URL" Default="" Mode="" Description="URL of the n8n webhook that powers the 'Ask Our AI' chat page (POST endpoint, see README)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Public Site URL" Target="NEXT_PUBLIC_SITE_URL" Default="https://www.goldendatasystems.com" Mode="" Description="Public URL of the site, used for canonical links, sitemap.xml, and Open Graph tags" Type="Variable" Display="always" Required="false" Mask="false">https://www.goldendatasystems.com</Config>
+  <Config Name="Contact Email API Key" Target="CONTACT_EMAIL_API_KEY" Default="" Mode="" Description="API key for the transactional email provider used by the contact form (leave blank to log submissions only)" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Contact Email To" Target="CONTACT_EMAIL_TO" Default="info@goldendatasystems.com" Mode="" Description="Destination address for contact form notifications" Type="Variable" Display="always" Required="false" Mask="false">info@goldendatasystems.com</Config>
+</Container>

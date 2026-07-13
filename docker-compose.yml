@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: golden-data-systems:local
+    container_name: golden-data-systems
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # n8n webhook powering the "Ask Our AI" chat page (see src/app/api/chat/route.ts)
+      CHAT_WEBHOOK_URL: "${CHAT_WEBHOOK_URL:-}"
+      # Public site URL used for canonical links, sitemap, and OG tags
+      NEXT_PUBLIC_SITE_URL: "${NEXT_PUBLIC_SITE_URL:-https://www.goldendatasystems.com}"
+      # Optional transactional email provider key for the contact form (see src/app/api/contact/route.ts)
+      CONTACT_EMAIL_API_KEY: "${CONTACT_EMAIL_API_KEY:-}"
+      CONTACT_EMAIL_TO: "${CONTACT_EMAIL_TO:-info@goldendatasystems.com}"
+      NODE_ENV: production
