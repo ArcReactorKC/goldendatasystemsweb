@@ -63,7 +63,6 @@ export function Footer() {
                 {site.supportEmail}
               </a>
             </li>
-            <li>{site.address}</li>
           </ul>
           <Link
             href="/contact"
@@ -75,9 +74,8 @@ export function Footer() {
       </Container>
 
       <div className="border-t border-white/10 py-6">
-        <Container className="flex flex-col items-center justify-between gap-3 text-xs text-slate-500 sm:flex-row">
+        <Container className="text-center text-xs text-slate-500">
           <p>&copy; {year} Golden Data Systems. All rights reserved.</p>
-          <p>Placeholder contact details — update before launch.</p>
         </Container>
       </div>
     </footer>

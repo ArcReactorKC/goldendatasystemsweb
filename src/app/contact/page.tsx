@@ -60,39 +60,7 @@ export default function ContactPage() {
                       <span className="text-slate-400">— existing clients &amp; support</span>
                     </span>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <Icon name="network" className="h-5 w-5 text-gold-600" />
-                    <span>{site.address}</span>
-                  </li>
                 </ul>
-              </div>
-
-              <div className="rounded-xl border border-navy-900/10 p-6">
-                <h2 className="text-lg font-bold text-navy-900">Schedule a Consultation</h2>
-                <p className="mt-2 text-sm text-slate-600">
-                  Pick a time directly on our calendar — no back-and-forth email required.
-                </p>
-                <div className="mt-4 aspect-[4/5] w-full overflow-hidden rounded-lg border border-navy-900/10 bg-slate-100 sm:aspect-square">
-                  {site.calendlyUrl && site.calendlyUrl.startsWith("http") ? (
-                    <iframe
-                      src={site.calendlyUrl}
-                      title="Schedule a consultation"
-                      className="h-full w-full"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center">
-                      <Icon name="clock" className="h-8 w-8 text-slate-400" />
-                      <p className="text-sm font-medium text-slate-500">
-                        [CALENDAR EMBED PLACEHOLDER]
-                      </p>
-                      <p className="text-xs text-slate-400">
-                        Replace <code>site.calendlyUrl</code> in <code>src/content/site.ts</code> with a
-                        Calendly (or similar) embed URL.
-                      </p>
-                    </div>
-                  )}
-                </div>
               </div>
             </div>
           </div>

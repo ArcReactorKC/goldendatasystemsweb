@@ -9,8 +9,6 @@ export const site = {
   url: "https://www.goldendatasystems.com",
   salesEmail: "sales@goldendatasystems.com",
   supportEmail: "support@goldendatasystems.com",
-  address: "[ADDRESS]",
-  calendlyUrl: "[CALENDLY_URL]",
   social: {
     linkedin: "[LINKEDIN_URL]",
   },

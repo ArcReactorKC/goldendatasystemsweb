@@ -95,15 +95,11 @@ to the console. Wire up `CONTACT_EMAIL_API_KEY` / `CONTACT_EMAIL_TO` to a real
 transactional email provider (Resend, Postmark, SendGrid, etc.) when ready —
 see the `TODO` comment in that file.
 
-The calendar embed on the Contact page is a placeholder. Set
-`site.calendlyUrl` in `src/content/site.ts` to a real Calendly (or similar)
-embed URL to activate it.
-
 ## Placeholders to replace before launch
 
 Search the codebase for these before going live:
 
-- `src/content/site.ts` — sales/support email, address, Calendly URL, social links
+- `src/content/site.ts` — sales/support email, social links
 - `src/content/site.ts` — `trustStats` and `credibilityNote` (real
   certifications, client logos, stats)
 - `.env.local` / deployment environment — `CHAT_WEBHOOK_URL`,
