@@ -53,8 +53,16 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-slate-400">
-            <li>{site.phone}</li>
-            <li>{site.email}</li>
+            <li>
+              <a href={`mailto:${site.salesEmail}`} className="hover:text-gold-400">
+                {site.salesEmail}
+              </a>
+            </li>
+            <li>
+              <a href={`mailto:${site.supportEmail}`} className="hover:text-gold-400">
+                {site.supportEmail}
+              </a>
+            </li>
             <li>{site.address}</li>
           </ul>
           <Link

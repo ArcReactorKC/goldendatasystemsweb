@@ -43,12 +43,22 @@ export default function ContactPage() {
                 <h2 className="text-lg font-bold text-navy-900">Direct Contact</h2>
                 <ul className="mt-4 space-y-4 text-sm text-slate-700">
                   <li className="flex items-center gap-3">
-                    <Icon name="chip" className="h-5 w-5 text-gold-600" />
-                    <span>{site.phone}</span>
+                    <Icon name="document" className="h-5 w-5 text-gold-600" />
+                    <span>
+                      <a href={`mailto:${site.salesEmail}`} className="hover:text-gold-600">
+                        {site.salesEmail}
+                      </a>{" "}
+                      <span className="text-slate-400">— new business &amp; sales inquiries</span>
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Icon name="document" className="h-5 w-5 text-gold-600" />
-                    <span>{site.email}</span>
+                    <span>
+                      <a href={`mailto:${site.supportEmail}`} className="hover:text-gold-600">
+                        {site.supportEmail}
+                      </a>{" "}
+                      <span className="text-slate-400">— existing clients &amp; support</span>
+                    </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Icon name="network" className="h-5 w-5 text-gold-600" />

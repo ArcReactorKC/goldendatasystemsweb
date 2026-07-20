@@ -103,7 +103,7 @@ embed URL to activate it.
 
 Search the codebase for these before going live:
 
-- `src/content/site.ts` — phone, email, address, Calendly URL, social links
+- `src/content/site.ts` — sales/support email, address, Calendly URL, social links
 - `src/content/site.ts` — `trustStats` and `credibilityNote` (real
   certifications, client logos, stats)
 - `.env.local` / deployment environment — `CHAT_WEBHOOK_URL`,

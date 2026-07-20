@@ -7,8 +7,8 @@ export const site = {
   description:
     "Golden Data Systems is a managed technology partner combining traditional IT support, industrial and OT experience, and practical AI automation for small and midsized businesses.",
   url: "https://www.goldendatasystems.com",
-  phone: "[PHONE]",
-  email: "[EMAIL]",
+  salesEmail: "sales@goldendatasystems.com",
+  supportEmail: "support@goldendatasystems.com",
   address: "[ADDRESS]",
   calendlyUrl: "[CALENDLY_URL]",
   social: {
