@@ -21,6 +21,19 @@ import { NextRequest } from "next/server";
  * body of the try block below with a `client.messages.create(...)` call —
  * the request/response contract with the frontend does not need to change.
  */
+
+// How long to wait for the n8n webhook to respond before giving up.
+// Also caps this route's own execution time on platforms that enforce one
+// (e.g. Vercel serverless functions) — see the `maxDuration` export below.
+const UPSTREAM_TIMEOUT_MS = 300_000; // 5 minutes
+
+// Next.js route segment config: raises the max execution time for this
+// function on platforms that impose one (Vercel Pro/Enterprise support up
+// to 300s; Hobby is capped at 10s regardless of this value). No effect on
+// self-hosted/standalone deployments (Docker, Unraid) — those are only
+// bound by UPSTREAM_TIMEOUT_MS above and any reverse proxy in front of them.
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest) {
   const webhookUrl = process.env.CHAT_WEBHOOK_URL;
 
@@ -58,7 +71,7 @@ export async function POST(req: NextRequest) {
         message: latestMessage.content,
         history: messages.slice(0, -1),
       }),
-      signal: AbortSignal.timeout(30_000),
+      signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
     });
   } catch {
     return Response.json(

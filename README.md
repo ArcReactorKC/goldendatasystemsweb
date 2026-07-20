@@ -84,6 +84,14 @@ If `CHAT_WEBHOOK_URL` is unset, or the webhook is unreachable, the API route
 returns a clear error and the chat UI falls back to a friendly message
 pointing visitors to the Contact page — the page never looks broken.
 
+**Timeout:** the route waits up to `UPSTREAM_TIMEOUT_MS` (300 seconds / 5
+minutes, set at the top of `src/app/api/chat/route.ts`) for the n8n webhook
+to respond before giving up. Raise or lower that constant if your workflow's
+LLM calls typically run faster or slower. If you self-host behind a reverse
+proxy (Nginx Proxy Manager, Traefik, SWAG, etc. on Unraid), its own
+read/proxy timeout — often 60s by default — will cut the connection first
+unless you raise it to match (e.g. `proxy_read_timeout 300s;` for Nginx).
+
 **Alternative architecture:** if you'd rather not depend on n8n/Ollama uptime
 for a public page, swap the body of `src/app/api/chat/route.ts` for a direct
 call to the Anthropic API (or another provider) with the knowledge base
