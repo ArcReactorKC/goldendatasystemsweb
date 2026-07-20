@@ -106,9 +106,7 @@ export function Header() {
           >
             Schedule a Consultation
           </Link>
-          <p className="mt-8 text-sm text-slate-400">
-            {site.phone} &middot; {site.email}
-          </p>
+          <p className="mt-8 text-sm text-slate-400">{site.salesEmail}</p>
         </nav>
       </div>
     </header>
