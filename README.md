@@ -70,9 +70,8 @@ knowledge base can change without redeploying the site.
 1. Set `CHAT_WEBHOOK_URL` to your n8n webhook endpoint.
 2. The route POSTs `{ message: string, history: {role, content}[] }` to that
    URL.
-3. Your n8n workflow should perform retrieval over a small knowledge base
-   seeded from this site's own content (services, industries, engagement
-   models, mission — see `src/content/`), call your LLM, and respond with
+3. Your n8n workflow should ground the LLM in this site's own content
+   (services, industries, engagement models, mission) and respond with
    either:
    - a streamed body (`text/plain` or `text/event-stream`) of the answer, or
    - a single JSON object: `{ "reply": "..." }` or `{ "text": "..." }`. The
@@ -83,6 +82,15 @@ knowledge base can change without redeploying the site.
 If `CHAT_WEBHOOK_URL` is unset, or the webhook is unreachable, the API route
 returns a clear error and the chat UI falls back to a friendly message
 pointing visitors to the Contact page — the page never looks broken.
+
+**Keeping it on-topic:** at this content size, a system prompt with the
+site's content embedded directly is simpler and more reliable than a vector
+search / RAG setup — see [`docs/chat-system-prompt.md`](docs/chat-system-prompt.md)
+for a ready-to-paste system prompt (generated from `src/content/*.ts` and
+the About page copy) that scopes the assistant to Golden Data Systems
+topics, tells it what to do with off-topic or account-specific questions,
+and stops it from inventing pricing, certifications, or stats that aren't
+published on the site.
 
 **Timeout:** the route waits up to `UPSTREAM_TIMEOUT_MS` (300 seconds / 5
 minutes, set at the top of `src/app/api/chat/route.ts`) for the n8n webhook
