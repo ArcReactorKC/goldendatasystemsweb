@@ -75,7 +75,10 @@ knowledge base can change without redeploying the site.
    models, mission — see `src/content/`), call your LLM, and respond with
    either:
    - a streamed body (`text/plain` or `text/event-stream`) of the answer, or
-   - a single JSON object: `{ "reply": "..." }`.
+   - a single JSON object: `{ "reply": "..." }` or `{ "text": "..." }`. The
+     `text` field matches n8n's default output field name, e.g. a "Respond to
+     Webhook" node set to **Respond With: First Incoming Item** downstream of
+     a Basic LLM Chain — no extra rename/Set node needed in your workflow.
 
 If `CHAT_WEBHOOK_URL` is unset, or the webhook is unreachable, the API route
 returns a clear error and the chat UI falls back to a friendly message

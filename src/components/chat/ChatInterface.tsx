@@ -69,7 +69,15 @@ export function ChatInterface() {
 
       if (contentType.includes("application/json")) {
         const data = await res.json();
-        const reply = typeof data.reply === "string" ? data.reply : FALLBACK_MESSAGE;
+        // Accepts either `reply` (documented contract) or `text` (n8n's
+        // default output field, e.g. Basic LLM Chain / Respond to Webhook
+        // with "Respond With: First Incoming Item").
+        const reply =
+          typeof data.reply === "string"
+            ? data.reply
+            : typeof data.text === "string"
+              ? data.text
+              : FALLBACK_MESSAGE;
         setMessages((prev) => prev.map((m) => (m.id === assistantId ? { ...m, content: reply } : m)));
       } else {
         const reader = res.body.getReader();
