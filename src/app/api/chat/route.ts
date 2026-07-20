@@ -13,7 +13,9 @@ import { NextRequest } from "next/server";
  *
  * Expected webhook response (either shape is supported):
  *   - A streamed body (text/plain or text/event-stream) of the answer text, OR
- *   - A single JSON object: { "reply": "..." }
+ *   - A single JSON object: { "reply": "..." } or { "text": "..." } — the
+ *     latter matches n8n's default output field (e.g. a Basic LLM Chain /
+ *     Respond to Webhook node set to "Respond With: First Incoming Item").
  *
  * To swap this for a direct Anthropic API call instead of n8n, replace the
  * body of the try block below with a `client.messages.create(...)` call —
