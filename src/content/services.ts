@@ -6,7 +6,7 @@ export const services: Service[] = [
     name: "Managed IT Support",
     summary: "A responsive, senior-level help desk that actually knows your environment.",
     description:
-      "Your team gets a direct line to technicians who already understand your network, your vendors, and your history — not a ticket queue that starts from zero every time. We handle the day-to-day so small issues stay small.",
+      "Your team gets a direct line to technicians who already understand your network, your vendors, and your history, not a ticket queue that starts from zero every time. We handle the day-to-day so small issues stay small.",
     included: [
       "Unlimited remote and on-site support for covered users and devices",
       "Proactive monitoring and alerting, not just reactive break/fix",
@@ -34,7 +34,7 @@ export const services: Service[] = [
   {
     slug: "device-and-user-management",
     name: "Device & User Management",
-    summary: "Every laptop, phone, and login accounted for — from onboarding to offboarding.",
+    summary: "Every laptop, phone, and login accounted for, from onboarding to offboarding.",
     description:
       "We manage the full device and identity lifecycle: provisioning new hires in hours, enforcing consistent security baselines across every endpoint, and making sure access disappears the moment someone leaves.",
     included: [
@@ -51,7 +51,7 @@ export const services: Service[] = [
     name: "Cloud Infrastructure",
     summary: "Right-sized cloud environments built for reliability, not just uptime badges.",
     description:
-      "Whether you're running workloads in Azure, AWS, or a hybrid environment, we design, migrate, and manage infrastructure that matches your actual usage patterns — with cost control and performance both on the table.",
+      "Whether you're running workloads in Azure, AWS, or a hybrid environment, we design, migrate, and manage infrastructure that matches your actual usage patterns, with cost control and performance both on the table.",
     included: [
       "Cloud architecture design and migration planning",
       "Infrastructure-as-code deployment for repeatable environments",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     name: "Data Backup & Disaster Recovery",
     summary: "Recovery plans that are tested, not just documented.",
     description:
-      "Backups are only useful if they actually restore. We design layered backup strategies and disaster recovery plans for your specific risk profile, then test them on a schedule — so a bad day never becomes a bad quarter.",
+      "Backups are only useful if they actually restore. We design layered backup strategies and disaster recovery plans for your specific risk profile, then test them on a schedule, so a bad day never becomes a bad quarter.",
     included: [
       "Automated, encrypted backups across on-site and cloud targets",
       "Defined recovery time and recovery point objectives (RTO/RPO)",
@@ -111,7 +111,7 @@ export const services: Service[] = [
     name: "Vendor Coordination",
     summary: "One point of contact for every technology vendor you deal with.",
     description:
-      "Line-of-business software support, ISP outages, hardware warranties — we sit between you and your vendors so your team stops losing hours to hold music and finger-pointing.",
+      "Line-of-business software support, ISP outages, hardware warranties: we sit between you and your vendors so your team stops losing hours to hold music and finger-pointing.",
     included: [
       "Single point of contact for ISPs, software vendors, and hardware OEMs",
       "Warranty and support-contract tracking",
@@ -126,7 +126,7 @@ export const services: Service[] = [
     name: "Strategic Technology Consulting",
     summary: "A technology roadmap tied to your business goals, not just your ticket history.",
     description:
-      "We act as a fractional technology leadership function — reviewing your environment against where the business is headed, and building a realistic, budgeted plan to close the gaps.",
+      "We act as a fractional technology leadership function, reviewing your environment against where the business is headed, and building a realistic, budgeted plan to close the gaps.",
     included: [
       "Quarterly technology business reviews (TBRs)",
       "Multi-year IT roadmap and capital planning",

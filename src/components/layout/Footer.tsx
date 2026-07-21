@@ -19,7 +19,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
-            Managed technology and intelligent infrastructure for growing businesses — traditional IT,
+            Managed technology and intelligent infrastructure for growing businesses: traditional IT,
             industrial OT experience, and practical AI, from one accountable partner.
           </p>
         </div>

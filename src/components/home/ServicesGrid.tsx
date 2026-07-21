@@ -13,7 +13,7 @@ export function ServicesGrid() {
       <Container>
         <SectionHeading
           eyebrow="Core Services"
-          title="Everything a modern IT department handles — managed as one program"
+          title="Everything a modern IT department handles, managed as one program"
           description="Eight interconnected disciplines, delivered by one team that already knows your environment."
         />
 

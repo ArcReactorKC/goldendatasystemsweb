@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "How We Work",
   description:
-    "Recurring managed plans, fixed-price implementation projects, consulting engagements, and managed cloud/software solutions — plus what onboarding with Golden Data Systems looks like.",
+    "Recurring managed plans, fixed-price implementation projects, consulting engagements, and managed cloud/software solutions, plus what onboarding with Golden Data Systems looks like.",
   path: "/how-we-work",
 });
 
@@ -25,7 +25,7 @@ export default function HowWeWorkPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-300">
             Some clients need us full-time. Others need a single project done right. We structure the
-            relationship to match — plainly, with no hidden scope.
+            relationship to match, plainly, with no hidden scope.
           </p>
         </Container>
       </section>
@@ -63,7 +63,7 @@ export default function HowWeWorkPage() {
           <SectionHeading
             eyebrow="Onboarding"
             title="What getting started looks like"
-            description="A straightforward path from first call to ongoing partnership — typically 2 to 6 weeks depending on environment complexity."
+            description="A straightforward path from first call to ongoing partnership, typically 2 to 6 weeks depending on environment complexity."
           />
 
           <div className="mt-14">

@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Managed IT, Industrial OT & AI Automation for Growing Businesses",
   description:
-    "Golden Data Systems is a managed technology partner for small and midsized businesses — combining managed IT support, industrial/OT infrastructure experience, and practical AI automation.",
+    "Golden Data Systems is a managed technology partner for small and midsized businesses, combining managed IT support, industrial/OT infrastructure experience, and practical AI automation.",
   path: "/",
 });
 

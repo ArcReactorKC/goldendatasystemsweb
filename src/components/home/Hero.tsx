@@ -26,7 +26,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-slate-300 sm:text-xl">
             Golden Data Systems combines managed IT, industrial-grade infrastructure experience, and
-            practical AI automation into a single, accountable partnership — so your technology drives
+            practical AI automation into a single, accountable partnership, so your technology drives
             the business instead of interrupting it.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

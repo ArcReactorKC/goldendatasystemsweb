@@ -23,7 +23,7 @@ export default function ServicesPage() {
             A full technology department, managed as one program
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-300">
-            Every discipline below is delivered by the same accountable team — no hand-offs between
+            Every discipline below is delivered by the same accountable team, with no hand-offs between
             vendors, no gaps in coverage between your help desk and your infrastructure.
           </p>
         </Container>

@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "AI & Automation",
   description:
-    "Workflow automation, private AI assistants, document processing, reporting dashboards, and custom tools — built around how your operation actually runs.",
+    "Workflow automation, private AI assistants, document processing, reporting dashboards, and custom tools, built around how your operation actually runs.",
   path: "/ai-automation",
 });
 
@@ -28,7 +28,7 @@ export default function AiAutomationPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-300">
             This is where Golden Data Systems differs from a traditional MSP. We don&apos;t sell AI as a
-            product — we build automation, private assistants, and custom tools that solve specific,
+            product; we build automation, private assistants, and custom tools that solve specific,
             expensive problems inside your operation, and we keep them running.
           </p>
         </Container>
@@ -39,7 +39,7 @@ export default function AiAutomationPage() {
           <SectionHeading
             eyebrow="What we build"
             title="Seven ways automation removes work from your team's plate"
-            description="Each capability below starts with a real operational problem — not a feature list."
+            description="Each capability below starts with a real operational problem, not a feature list."
           />
 
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -89,7 +89,7 @@ export default function AiAutomationPage() {
           <SectionHeading
             eyebrow="See it in action"
             title="Curious what this looks like in practice?"
-            description="Our own “Ask Our AI” assistant on this site runs on the same architecture we build for clients — a private knowledge base, retrieval-grounded answers, and no hallucinated claims about services we don't offer."
+            description="Our own “Ask Our AI” assistant on this site runs on the same architecture we build for clients: a private knowledge base, retrieval-grounded answers, and no hallucinated claims about services we don't offer."
             light
           />
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">

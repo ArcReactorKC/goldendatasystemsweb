@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "About & Mission",
   description:
-    "Golden Data Systems is a long-term technology partner for small and midsized businesses — built on critical-infrastructure experience, not just help-desk ticketing.",
+    "Golden Data Systems is a long-term technology partner for small and midsized businesses, built on critical-infrastructure experience, not just help-desk ticketing.",
   path: "/about",
 });
 
@@ -31,7 +31,7 @@ const values = [
     icon: "chip" as const,
     title: "Practical technology, not hype",
     description:
-      "We adopt automation and AI where it solves a real, measurable problem — never as a feature checkbox. If it doesn't save you time or reduce risk, we won't recommend it.",
+      "We adopt automation and AI where it solves a real, measurable problem, never as a feature checkbox. If it doesn't save you time or reduce risk, we won't recommend it.",
   },
 ];
 
@@ -55,11 +55,11 @@ export default function AboutPage() {
             Golden Data Systems was built on a simple observation: small and midsized businesses are
             expected to run on enterprise-grade technology, but are rarely offered enterprise-grade
             support. Most managed service providers optimize for ticket volume. We optimized for
-            something else — becoming the kind of technology partner our own backgrounds in critical
+            something else: becoming the kind of technology partner our own backgrounds in critical
             infrastructure taught us to expect.
           </p>
           <p className="mt-6 text-lg leading-relaxed text-slate-700">
-            Our team&apos;s experience spans traditional corporate IT and hands-on operational technology —
+            Our team&apos;s experience spans traditional corporate IT and hands-on operational technology:
             the networks, control systems, and remote assets that don&apos;t tolerate downtime. That
             background shapes how we approach every engagement: security and reliability aren&apos;t add-ons,
             they&apos;re the starting point.
@@ -68,7 +68,7 @@ export default function AboutPage() {
             As automation and practical AI became genuinely useful tools rather than buzzwords, we built
             that capability in-house rather than bolting it on. Today, Golden Data Systems sits at the
             intersection of managed IT, industrial-grade infrastructure discipline, and applied
-            automation — a combination most MSPs simply don&apos;t offer.
+            automation, a combination most MSPs simply don&apos;t offer.
           </p>
         </Container>
       </Section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
             We exist to give growing businesses access to the kind of technology leadership,
             infrastructure discipline, and automation capability that&apos;s normally reserved for large
-            enterprises — delivered as a long-term partnership, not a transactional vendor relationship.
+            enterprises, delivered as a long-term partnership, not a transactional vendor relationship.
           </p>
 
           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-3">

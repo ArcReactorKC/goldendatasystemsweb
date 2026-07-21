@@ -1,4 +1,4 @@
-# Golden Data Systems — Marketing Website
+# Golden Data Systems: Marketing Website
 
 The public marketing site for **Golden Data Systems**, a managed technology and
 intelligent infrastructure partner for small and midsized businesses. Built
@@ -8,7 +8,7 @@ either on Vercel or as a self-hosted Docker container (including on Unraid).
 ## Tech stack
 
 - **Next.js 14** (App Router), TypeScript, Tailwind CSS
-- Content lives in structured TypeScript files under `src/content/` — no CMS
+- Content lives in structured TypeScript files under `src/content/`; no CMS
   required for v1
 - `output: "standalone"` in `next.config.js` so the app runs as a lightweight
   Node server, either via `next start` or the Docker image below
@@ -27,8 +27,8 @@ src/
   types/               Shared TypeScript types for content models
 ```
 
-To edit site copy — service descriptions, industries served, stats, nav
-links, contact placeholders — edit the files in `src/content/`. No page code
+To edit site copy (service descriptions, industries served, stats, nav
+links, contact placeholders), edit the files in `src/content/`. No page code
 needs to change for most content updates.
 
 ## Local development
@@ -59,7 +59,7 @@ npm run typecheck   # tsc --noEmit
 ## Ask Our AI backend
 
 The `/ask-ai` page is a chat UI backed by `src/app/api/chat/route.ts`, which is
-intentionally a **thin proxy** — it forwards the conversation to an external
+intentionally a **thin proxy**: it forwards the conversation to an external
 webhook and streams the response back. All retrieval and generation logic
 (embedding search over a Golden Data Systems knowledge base, prompting a local
 LLM, etc.) is expected to live in that external system so the model and
@@ -77,15 +77,16 @@ knowledge base can change without redeploying the site.
    - a single JSON object: `{ "reply": "..." }` or `{ "text": "..." }`. The
      `text` field matches n8n's default output field name, e.g. a "Respond to
      Webhook" node set to **Respond With: First Incoming Item** downstream of
-     a Basic LLM Chain — no extra rename/Set node needed in your workflow.
+     a Basic LLM Chain, so no extra rename/Set node is needed in your
+     workflow.
 
 If `CHAT_WEBHOOK_URL` is unset, or the webhook is unreachable, the API route
 returns a clear error and the chat UI falls back to a friendly message
-pointing visitors to the Contact page — the page never looks broken.
+pointing visitors to the Contact page, so the page never looks broken.
 
 **Keeping it on-topic:** at this content size, a system prompt with the
 site's content embedded directly is simpler and more reliable than a vector
-search / RAG setup — see [`docs/chat-system-prompt.md`](docs/chat-system-prompt.md)
+search / RAG setup. See [`docs/chat-system-prompt.md`](docs/chat-system-prompt.md)
 for a ready-to-paste system prompt (generated from `src/content/*.ts` and
 the About page copy) that scopes the assistant to Golden Data Systems
 topics, tells it what to do with off-topic or account-specific questions,
@@ -97,31 +98,31 @@ minutes, set at the top of `src/app/api/chat/route.ts`) for the n8n webhook
 to respond before giving up. Raise or lower that constant if your workflow's
 LLM calls typically run faster or slower. If you self-host behind a reverse
 proxy (Nginx Proxy Manager, Traefik, SWAG, etc. on Unraid), its own
-read/proxy timeout — often 60s by default — will cut the connection first
+read/proxy timeout (often 60s by default) will cut the connection first
 unless you raise it to match (e.g. `proxy_read_timeout 300s;` for Nginx).
 
 **Alternative architecture:** if you'd rather not depend on n8n/Ollama uptime
 for a public page, swap the body of `src/app/api/chat/route.ts` for a direct
 call to the Anthropic API (or another provider) with the knowledge base
 injected as context. The request/response contract with the frontend
-(`src/components/chat/ChatInterface.tsx`) does not need to change — this is a
+(`src/components/chat/ChatInterface.tsx`) does not need to change; this is a
 one-file swap.
 
 ## Contact form
 
 `src/app/api/contact/route.ts` validates submissions and currently logs them
 to the console. Wire up `CONTACT_EMAIL_API_KEY` / `CONTACT_EMAIL_TO` to a real
-transactional email provider (Resend, Postmark, SendGrid, etc.) when ready —
+transactional email provider (Resend, Postmark, SendGrid, etc.) when ready;
 see the `TODO` comment in that file.
 
 ## Placeholders to replace before launch
 
 Search the codebase for these before going live:
 
-- `src/content/site.ts` — sales/support email, social links
-- `src/content/site.ts` — `trustStats` and `credibilityNote` (real
+- `src/content/site.ts`: sales/support email, social links
+- `src/content/site.ts`: `trustStats` and `credibilityNote` (real
   certifications, client logos, stats)
-- `.env.local` / deployment environment — `CHAT_WEBHOOK_URL`,
+- `.env.local` / deployment environment: `CHAT_WEBHOOK_URL`,
   `NEXT_PUBLIC_SITE_URL`, `CONTACT_EMAIL_API_KEY`, `CONTACT_EMAIL_TO`
 
 ## Docker
@@ -132,7 +133,7 @@ Search the codebase for these before going live:
 docker compose up --build
 ```
 
-This builds the multi-stage `Dockerfile` (deps → build → slim
+This builds the multi-stage `Dockerfile` (deps -> build -> slim
 `node:20-alpine` runtime, non-root user, `next build` with
 `output: "standalone"`) and serves the site on `http://localhost:3000`.
 
@@ -151,7 +152,7 @@ docker run --rm -p 3000:3000 \
   golden-data-systems:local
 ```
 
-### CI/CD — GitHub Actions
+### CI/CD: GitHub Actions
 
 `.github/workflows/docker-publish.yml` builds and publishes the image to
 GHCR on every push to `main` and on version tags (`v*.*.*`):
@@ -160,7 +161,7 @@ GHCR on every push to `main` and on version tags (`v*.*.*`):
 - `ghcr.io/<owner>/golden-data-systems:sha-<short-sha>` (every build)
 - `ghcr.io/<owner>/golden-data-systems:<version>` (on a `vX.Y.Z` tag)
 
-No extra secrets are required — it authenticates with the automatically
+No extra secrets are required; it authenticates with the automatically
 provided `GITHUB_TOKEN`, scoped to `packages: write`. If your GHCR packages
 are private, make sure the repository (or org) is configured to allow the
 Unraid host to pull them, or make the package public.
@@ -170,29 +171,29 @@ Unraid host to pull them, or make the package public.
 You can add this app to Unraid's Community Applications either by pointing at
 this repo's template directly, or by adding the template manually.
 
-**Option A — Add via template URL:**
+**Option A: Add via template URL**
 
-1. In Unraid, go to **Docker → Add Container**.
+1. In Unraid, go to **Docker -> Add Container**.
 2. Click the template dropdown at the top and choose **"Template"**, then
    paste the raw URL to `unraid-template.xml` in this repo, e.g.:
    `https://raw.githubusercontent.com/arcreactorkc/goldendatasystemsweb/main/unraid-template.xml`
-3. Unraid will populate the fields (repository, port, env vars) — review and
+3. Unraid will populate the fields (repository, port, env vars). Review and
    click **Apply**.
 
-**Option B — Manual template add:**
+**Option B: Manual template add**
 
 1. Copy `unraid-template.xml` from this repo to
    `/boot/config/plugins/dockerMan/templates-user/` on your Unraid box.
-2. In Unraid, go to **Docker → Add Container**, and select
+2. In Unraid, go to **Docker -> Add Container**, and select
    **golden-data-systems** from the template dropdown.
 3. Fill in the exposed fields:
-   - **WebUI Port** — host port to map to the container's `3000` (default
+   - **WebUI Port**: host port to map to the container's `3000` (default
      `3000`)
-   - **Chat Webhook URL** — your n8n webhook for Ask Our AI
-   - **Public Site URL** — your production domain
-   - **Contact Email API Key** / **Contact Email To** — optional, for the
+   - **Chat Webhook URL**: your n8n webhook for Ask Our AI
+   - **Public Site URL**: your production domain
+   - **Contact Email API Key** / **Contact Email To**: optional, for the
      contact form
-4. Click **Apply**. The app is stateless in v1 — no volume mappings are
+4. Click **Apply**. The app is stateless in v1, so no volume mappings are
    required.
 
 Once running, the WebUI button in Unraid's Docker tab opens
@@ -202,8 +203,8 @@ Once running, the WebUI button in Unraid's Docker tab opens
 
 - Semantic HTML throughout, keyboard-navigable nav (including the mobile
   slide-out menu) and chat interface
-- All interactive targets are at least 44×44px
+- All interactive targets are at least 44x44px
 - Images should use `next/image` with responsive `sizes` as real photography
-  is added (v1 ships with no binary image assets — only inline SVG/icon
-  components — to keep the repo lightweight)
+  is added (v1 ships with no binary image assets, only inline SVG/icon
+  components, to keep the repo lightweight)
 - Tested layouts at 375px, 768px, 1024px, and 1440px breakpoints

@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Ask Our AI",
   description:
-    "Ask our AI assistant questions about Golden Data Systems' services, industries served, engagement models, and mission — grounded only in our own content.",
+    "Ask our AI assistant questions about Golden Data Systems' services, industries served, engagement models, and mission, grounded only in our own content.",
   path: "/ask-ai",
 });
 
@@ -20,7 +20,7 @@ export default function AskAiPage() {
               Get answers about Golden Data Systems, instantly
             </h1>
             <p className="mt-2 hidden max-w-2xl text-sm text-slate-600 sm:block sm:text-base">
-              This assistant answers questions using only our own site content — services, industries,
+              This assistant answers questions using only our own site content: services, industries,
               engagement models, and mission. It won&apos;t speculate beyond what we&apos;ve published.
             </p>
           </Container>

@@ -14,7 +14,7 @@ export function Differentiators() {
         <SectionHeading
           eyebrow="Why Golden Data Systems"
           title="Built for businesses that need more than a help desk"
-          description="Most MSPs manage laptops and licenses. We do that too — and then we go further into automation, industrial systems, and AI that most providers don't touch."
+          description="Most MSPs manage laptops and licenses. We do that too, and then we go further into automation, industrial systems, and AI that most providers don't touch."
           light
         />
 

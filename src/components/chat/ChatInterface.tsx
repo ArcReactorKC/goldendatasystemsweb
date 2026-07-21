@@ -19,7 +19,7 @@ const starterQuestions = [
 ];
 
 const FALLBACK_MESSAGE =
-  "Our AI assistant is temporarily unavailable. This usually means the backend service is offline or still being configured. Please reach out to us directly and a real person will help — see the contact details below.";
+  "Our AI assistant is temporarily unavailable. This usually means the backend service is offline or still being configured. Please reach out to us directly and a real person will help; see the contact details below.";
 
 function makeId() {
   return Math.random().toString(36).slice(2);

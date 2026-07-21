@@ -5,7 +5,7 @@ import { NextRequest } from "next/server";
  *
  * All retrieval/generation logic (embedding search over the Golden Data
  * Systems knowledge base, prompting the local LLM, etc.) lives in the n8n
- * workflow itself — this route only forwards the conversation and relays
+ * workflow itself; this route only forwards the conversation and relays
  * the response, so the model/knowledge base can be swapped without
  * redeploying the site.
  *
@@ -13,24 +13,24 @@ import { NextRequest } from "next/server";
  *
  * Expected webhook response (either shape is supported):
  *   - A streamed body (text/plain or text/event-stream) of the answer text, OR
- *   - A single JSON object: { "reply": "..." } or { "text": "..." } — the
+ *   - A single JSON object: { "reply": "..." } or { "text": "..." }. The
  *     latter matches n8n's default output field (e.g. a Basic LLM Chain /
  *     Respond to Webhook node set to "Respond With: First Incoming Item").
  *
  * To swap this for a direct Anthropic API call instead of n8n, replace the
- * body of the try block below with a `client.messages.create(...)` call —
+ * body of the try block below with a `client.messages.create(...)` call;
  * the request/response contract with the frontend does not need to change.
  */
 
 // How long to wait for the n8n webhook to respond before giving up.
 // Also caps this route's own execution time on platforms that enforce one
-// (e.g. Vercel serverless functions) — see the `maxDuration` export below.
+// (e.g. Vercel serverless functions); see the `maxDuration` export below.
 const UPSTREAM_TIMEOUT_MS = 300_000; // 5 minutes
 
 // Next.js route segment config: raises the max execution time for this
 // function on platforms that impose one (Vercel Pro/Enterprise support up
 // to 300s; Hobby is capped at 10s regardless of this value). No effect on
-// self-hosted/standalone deployments (Docker, Unraid) — those are only
+// self-hosted/standalone deployments (Docker, Unraid). Those are only
 // bound by UPSTREAM_TIMEOUT_MS above and any reverse proxy in front of them.
 export const maxDuration = 300;
 

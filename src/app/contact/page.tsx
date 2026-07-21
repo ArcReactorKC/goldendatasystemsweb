@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Schedule a consultation or send Golden Data Systems a message — we'll follow up within one business day.",
+    "Schedule a consultation or send Golden Data Systems a message, and we'll follow up within one business day.",
   path: "/contact",
 });
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
                       <a href={`mailto:${site.salesEmail}`} className="hover:text-gold-600">
                         {site.salesEmail}
                       </a>{" "}
-                      <span className="text-slate-400">— new business &amp; sales inquiries</span>
+                      <span className="text-slate-400">(new business &amp; sales inquiries)</span>
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -57,7 +57,7 @@ export default function ContactPage() {
                       <a href={`mailto:${site.supportEmail}`} className="hover:text-gold-600">
                         {site.supportEmail}
                       </a>{" "}
-                      <span className="text-slate-400">— existing clients &amp; support</span>
+                      <span className="text-slate-400">(existing clients &amp; support)</span>
                     </span>
                   </li>
                 </ul>

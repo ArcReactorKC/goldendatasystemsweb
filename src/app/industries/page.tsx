@@ -25,7 +25,7 @@ export default function IndustriesPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-slate-300">
             Distributed teams, remote sites, and specialized operations need technology support that
-            assumes distance and complexity from day one — not a generic help desk retrofitted for it.
+            assumes distance and complexity from day one, not a generic help desk retrofitted for it.
           </p>
         </Container>
       </section>

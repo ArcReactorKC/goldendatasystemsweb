@@ -40,7 +40,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
-        <p className="font-semibold text-emerald-800">Thanks — your message is on its way.</p>
+        <p className="font-semibold text-emerald-800">Thanks, your message is on its way.</p>
         <p className="mt-1 text-sm text-emerald-700">
           A member of our team will follow up within one business day.
         </p>
